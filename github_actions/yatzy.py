@@ -42,7 +42,7 @@ class Yatzy:
 
     def TwoPairs(self): #
         counts = [self.dice.count(val) for val in set(self.dice)]
-        pairs = [val for val, count in zip(set(self.dice), counts) if count == 2]
+        pairs = [val for val, count in zip(set(self.dice), counts) if count >= 2] # Issue in the logic is fixed
         return sum(pairs) * 2 if len(pairs) == 2 else 0
 
     def ThreeAlike(self):
